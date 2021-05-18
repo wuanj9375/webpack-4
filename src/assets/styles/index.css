@@ -1,0 +1,11 @@
+@import "./../fonts/iconfont.css";
+
+:root {
+  --some-length: 100px;
+}
+
+.i {
+  height: var(--some-length);
+  width: var(--some-length);
+  background-image: url("./../images/host.png");
+}

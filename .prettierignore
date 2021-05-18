@@ -1,0 +1,7 @@
+dist
+public
+build
+.prettierignore
+.gitignore
+.eslintignore
+/*.config.js

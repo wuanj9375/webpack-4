@@ -1,0 +1,6 @@
+/.husky
+/dist
+/node_modules/
+/build
+/public
+/src/assets/fonts/*.css
