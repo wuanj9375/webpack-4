@@ -5,7 +5,8 @@ const webpack = require("webpack");
 const { merge } = require("webpack-merge");
 const configFactory = require("./webpack.common.js");
 const FriendlyErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
-const ESLintWebpackPlugin = require('eslint-webpack-plugin')
+const ESLintWebpackPlugin = require("eslint-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const commonConfig = configFactory("development");
 const devConfig = merge(commonConfig, {
 	mode: "development",
@@ -26,7 +27,12 @@ const devConfig = merge(commonConfig, {
 			},
 		}),
 		new webpack.HotModuleReplacementPlugin(),
-		new ESLintWebpackPlugin()
+		new ESLintWebpackPlugin(),
+		new ForkTsCheckerWebpackPlugin({
+			eslint: {
+				files: "./src/**/*.{ts,js}", // required - same as command `eslint ./src/**/*.{ts,tsx,js,jsx} --ext .ts,.tsx,.js,.jsx`
+			},
+		}),
 	],
 });
 
