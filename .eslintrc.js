@@ -5,10 +5,17 @@ module.exports = {
 		es2021: true,
 		node: true,
 	},
-	extends: ["eslint:recommended", "plugin:prettier/recommended"],
-	parser: "@babel/eslint-parser",
+	extends: [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:prettier/recommended",
+	],
+	plugins: ["@typescript-eslint"],
+	parser: "@typescript-eslint/parser",
+	// parser: "@babel/eslint-parser",
 	parserOptions: {
 		// parser: "@babel/eslint-parser",
+		ecmaVersion: 2018,
 		sourceType: "module",
 	},
 	rules: {

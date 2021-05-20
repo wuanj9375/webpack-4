@@ -7,7 +7,9 @@ module.exports = {
 			//   useBuiltIns: "usage", // 'usage', ‘entry’, false
 			//   corejs: 3,
 			// },
+			
 		],
+		"@babel/preset-typescript"
 	],
 	plugins: [
 		[
@@ -16,5 +18,7 @@ module.exports = {
 				corejs: 3,
 			},
 		],
+		// "@babel/plugin-proposal-class-properties",
+		// "@babel/plugin-proposal-object-rest-spread"
 	],
 };

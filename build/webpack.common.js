@@ -22,11 +22,17 @@ const commonConfig = (env) => {
 			chunkFilename: `js/[name]${isProdMode ? ".[contenthash:8]" : ""}.chunk.js`,
 			publicPath: "/",
 		},
+		resolve: {
+			extensions: [".js", ".ts"],
+			alias: {
+				src: resolveApp("src"),
+			},
+		},
 		module: {
 			// noPare:'',
 			rules: [
 				{
-					test: /\.js$/,
+					test: /\.(js|ts)$/,
 					exclude: /node_modules/,
 					use: {
 						loader: "babel-loader",
